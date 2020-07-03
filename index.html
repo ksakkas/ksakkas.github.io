@@ -55,36 +55,7 @@
 .ml1 .line2 { bottom: 0; }
 </style>
 
-<script>
-    // Wrap every letter in a span
-var textWrapper = document.querySelector('.ml1 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml1 .letter',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1)
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script>
 </head>
 <body>
     <!--  <center><img src="img/logo.png" width="300" height="250"></center>-->
@@ -112,6 +83,37 @@ anime.timeline({loop: true})
         <a href="https://ksakkas.github.io/Learn-Assembly/" target="_blank">
             <abbr style=" text-align: center; font-family: calibri;"title="Learn Assembly"><img src="img/la.png" width="310px" height="240px"></abbr></a>
     </div>
+
+    <script>
+        // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml1 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml1 .letter',
+        scale: [0.3,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 600,
+        delay: (el, i) => 70 * (i+1)
+      }).add({
+        targets: '.ml1 .line',
+        scaleX: [0,1],
+        opacity: [0.5,1],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=875',
+        delay: (el, i, l) => 80 * (l - i)
+      }).add({
+        targets: '.ml1',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+    </script>
 
 </body>
 </html>
