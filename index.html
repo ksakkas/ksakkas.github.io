@@ -117,7 +117,11 @@ tab1 { padding-left: 4em; }
                       <img src="img/logogh.png"></a>
       </div>
     </center>  
-
+	<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+		
   <script>
         // Wrap every letter in a span
     var textWrapper = document.querySelector('.ml1 .letters');
