@@ -151,6 +151,18 @@ tab1 { padding-left: 4em; }
 
 	
 	<script>
+	<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
+		
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+		
+		
   window.fbAsyncInit = function() {
     FB.init({
       appId      : 3271765916223642,
